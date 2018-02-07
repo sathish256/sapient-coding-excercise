@@ -31,7 +31,7 @@ public class CatalogueController {
 	
 	
 	@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<List<Product>> getProducts(@RequestParam(value="type") String type){
+	public ResponseEntity<List<Product>> getProducts(@RequestParam(value="type", required=false) String type){
 		List<Product> products = catalogueManager.getProducts(type);
 		return new ResponseEntity<>(products, HttpStatus.OK);
 	}

@@ -31,8 +31,7 @@ public class CatalogueExceptionHandler extends ResponseEntityExceptionHandler {
        String error = "Product not found!";
        return buildResponseEntity(new ServiceError(HttpStatus.NOT_FOUND, error, ex));
    }
-
-
+   
    private ResponseEntity<Object> buildResponseEntity(ServiceError serviceError) {
        return new ResponseEntity<>(serviceError, serviceError.getStatus());
    }
